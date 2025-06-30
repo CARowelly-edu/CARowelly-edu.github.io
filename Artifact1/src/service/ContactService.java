@@ -2,6 +2,8 @@ package service;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
 
 import model.Contact;
 
@@ -36,5 +38,8 @@ public class ContactService {
 	 public Contact getContact(String contactId) {
 		 return contacts.get(contactId);
 	 }
-
+	 
+	 public List<Contact> getAllContacts() {
+	        return new ArrayList<>(contacts.values());
+	    }
 }

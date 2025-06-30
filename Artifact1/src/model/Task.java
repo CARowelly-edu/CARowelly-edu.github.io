@@ -4,9 +4,9 @@ public class Task {
 	
 	private String taskId;
 	private String name;
-	private String description;
+	private String taskDescription;
 	
-	public Task(String taskId, String name, String description) {
+	public Task(String taskId, String name, String taskDescription) {
 			
 			//validate inputs against requirements
 			boolean isValid = validateInput(taskId, 10);
@@ -16,7 +16,7 @@ public class Task {
 			}
 			
 			isValid = isValid && setName(name);
-			isValid = isValid && setDescription(description);
+			isValid = isValid && setTaskDescription(taskDescription);
 			
 			if(!isValid) {
 				throw new IllegalArgumentException("Invalid input");
@@ -33,11 +33,11 @@ public class Task {
 		return isValid;
 	}
 	
-	public boolean setDescription(String description) {
-		boolean isValid = validateInput(description, 50);
+	public boolean setTaskDescription(String taskDescription) {
+		boolean isValid = validateInput(taskDescription, 50);
 		
 		if(isValid) {
-			this.description = description;
+			this.taskDescription = taskDescription;
 		}
 		return isValid;
 	}
@@ -50,8 +50,8 @@ public class Task {
 		return name;
 	}
 	
-	public String getDescription() {
-		return description;
+	public String getTaskDescription() {
+		return taskDescription;
 	}
 	
 	private boolean validateInput(String item, int length) {

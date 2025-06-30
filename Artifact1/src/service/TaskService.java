@@ -2,6 +2,8 @@ package service;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
 
 import model.Task;
 
@@ -14,7 +16,7 @@ public class TaskService {
 		 this.tasks = new HashMap<String, Task>();
 	 }
 	 
-		//Create a singleton Contact Service
+		//Create a singleton Task Service
 	 public static TaskService getService() {
 		 return reference;
 	 }
@@ -36,5 +38,7 @@ public class TaskService {
 	 public Task getTask(String taskId) {
 		 return tasks.get(taskId);
 	 }
-
+	 public List<Task> getAllTasks() {
+	     return new ArrayList<>(tasks.values());
+	 }
 }
